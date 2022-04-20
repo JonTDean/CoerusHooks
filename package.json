@@ -1,7 +1,10 @@
 {
-  "name": "context_examples",
+  "name": "@JonTDean/CoerusHooks",
   "version": "0.1.0",
   "private": true,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/JonTDean"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,6 +12,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "meyda": "^5.3.0",
     "next": "12.1.5",
     "react": "18.0.0",
     "react-dom": "18.0.0"
