@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import useMC from '../hooks/useMC';
-import useSRC from '../hooks/useSRC';
-import useWAC from '../hooks/useWAC';
+import useMC from '../lib/hooks/useMC';
+import useSRC from '../lib/hooks/useSRC';
+import useWAC from '../lib/hooks/useWAC';
 
 const Example = () => {
 	const { speechRecognition } = useSRC();
