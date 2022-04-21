@@ -54,7 +54,6 @@ const MeydaAnalyzerContextProvider = ({ children }: any) =>  {
 				meydaAnalyzer.stop();
 			}
 		})
-	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [webAudio]);
 
 	const value = {

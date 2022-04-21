@@ -63,7 +63,6 @@ const WebAudioContextProvider = ({ children }: any) =>  {
 				webAudioCtx.close();
 			}
 		});
-	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 	
 	// Context props to share with the ctx Consumer/useHook
