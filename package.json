@@ -1,9 +1,6 @@
 {
   "name": "coerushooks",
   "version": "0.2.3",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/jontdean"
-  },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "@types/jest": "^27.0.1",
