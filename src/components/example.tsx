@@ -21,7 +21,7 @@ const Example = () => {
 		<div>
 			<p>Index Page for Context API</p>
 			<p>Web Audio: {webAudio?.wacState}</p>
-			<p>Speech Recognition State: {speechRecognition.lang.length > 1 ? "On" : "Off"}</p>
+			<p>Speech Recognition State: {speechRecognition?.lang.length > 1 ? "On" : "Off"}</p>
 			<p>Meyda State: {meydaAnalyzer?._m?.EXTRACTION_STARTED ? "On" : "Off"} </p>
 			<button onClick={() => webAudio.toggleWACState()}>Web Audio {webAudio?.wacState != "running" ? "Start" : "Stop"}</button>
 		</div>
