@@ -5,9 +5,9 @@ import SpeechRecognitionContextProvider from "../SpeechRecognitionContext/SRCPro
 import WebAudioContextProvider from "../WebAudioContext/WACProvider";
 import MeydaAnalyzerContextProvider from "../MeydaContext/MCProvider";
 //* Hooks
-import useSRC from "../SpeechRecognitionContext/useSRC";
-import useWAC from "../WebAudioContext/useWAC";
-import useMC from "../MeydaContext/useMC";
+import useSRC from "../../Hooks/useSRC";
+import useWAC from "../../Hooks/useWAC";
+import useMC from "../../Hooks/useMC";
 //* Globals
 import Meyda from "meyda";
 import CoerusContext from "./CC";

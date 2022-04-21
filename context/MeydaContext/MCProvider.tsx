@@ -6,7 +6,7 @@ import Meyda from "meyda";
 import SpeechRecognitionContextProvider from "../SpeechRecognitionContext/SRCProvider";
 import MeydaAnalyzerContext from "./MC";
 // * Hooks
-import useWAC from "../WebAudioContext/useWAC";
+import useWAC from "../../Hooks/useWAC";
 
 const DEFAULT_MFCC: number[] = [0,0,0,0,0,0,0,0,0,0,0,0,0];
 const MFCC_HISTORY_MAX_LENGTH: number = 60

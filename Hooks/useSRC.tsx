@@ -1,22 +1,22 @@
 import { useContext, useEffect } from "react";
-import MeydaAnalyzerContext from "./MC";
+import SpeechRecognitionContext from "../context/SpeechRecognitionContext/SRC";
 
 // Create the speech recognition consumer 
 // this is just the hookified version.
-const useMC = () => {
-	const ctx = useContext(MeydaAnalyzerContext);
+const useSRC= () => {
+	const ctx = useContext(SpeechRecognitionContext);
 
 	useEffect(() => {
-		console.log("Meyda Analyzer Context has been updated: ", ctx);
+		console.log("Speech Context has been updated: ", ctx)
 	}, [ctx]);
 	
 	// Check to see if the ctxState is null/undefined 
 	// or if the speechRecognition process is available
 	if(ctx  === undefined || ctx === null) {
-		throw new Error('useMC must be used within a Meyda Analyzer Provider');
+		throw new Error('useSRC must be used within a Speech Recognition Provider')
 	};
 	
 	return ctx;
 };
 
-export default useMC;
+export default useSRC;

@@ -1,6 +1,6 @@
 {
-  "name": "@JonTDean/CoerusHooks",
-  "version": "0.1.0",
+  "name": "@jontdean/coerushooks",
+  "version": "0.1.1",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/JonTDean"
   },

@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef } from 'react';
-import useMC from '../context/MeydaContext/useMC';
-import useSRC from '../context/SpeechRecognitionContext/useSRC';
-import useWAC from '../context/WebAudioContext/useWAC';
+import useMC from '../Hooks/useMC';
+import useSRC from '../Hooks/useSRC';
+import useWAC from '../Hooks/useWAC';
 
 const Example = () => {
 	const { speechRecognition } = useSRC();

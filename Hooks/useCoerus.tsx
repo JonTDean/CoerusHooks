@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import CoerusContext from "./CC";
+import CoerusContext from "../context/CoerusContext/CC";
 
 // Create the speech recognition consumer 
 // this is just the hookified version.
