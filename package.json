@@ -1,11 +1,14 @@
 {
 	"name": "coerushooks",
 	"version": "0.2.6",
-	"main": "dist/index.js",
-	"module": "dist/index.js",
-	"files": [ "dist", "README.md" ],
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"files": [
+		"dist",
+		"README.md"
+	],
+	"types": "dist/index.d.ts",
 	"dependencies": {
-		"@babel/polyfill": "^7.12.1",
 		"@types/jest": "^27.0.1",
 		"@types/node": "^16.7.13",
 		"@types/react": "^18.0.0",
@@ -41,8 +44,10 @@
 		]
 	},
 	"devDependencies": {
-		"@babel/cli": "^7.17.6",
-		"@babel/core": "^7.17.9",
-		"@babel/preset-env": "^7.16.11"
+		"@rollup/plugin-commonjs": "^21.1.0",
+		"@rollup/plugin-node-resolve": "^13.2.1",
+		"@rollup/plugin-typescript": "^8.3.2",
+		"rollup": "^2.70.2",
+		"rollup-plugin-dts": "^4.2.1"
 	}
 }
