@@ -7,7 +7,7 @@ const packageJson = require("./package.json");
 
 const config = [
 	{
-	  input: "src/lib/index.ts",
+	  input: "src/index.ts",
 	  output: [
 		{
 		  file: packageJson.main,
