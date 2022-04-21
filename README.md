@@ -1,34 +1,92 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Coerus Hooks Alpha
 
-## Getting Started
+This was made in order to combine the functionality of WebAudio,  WebSpeech, and Meyda Analyzer into an easy to use package.
 
-First, run the development server:
+## To Do
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- [ ] Polyfill for WebSpeech API
+- [ ] Polyfill for WebAudio API
+- [ ] Polyfill for Meyda Analyzer
+- [ ] Add more features
+- [ ] Add more languages
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## How to use
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Context: 
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+We have three main contexts and one higher order context:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Main Contexts:
 
-## Learn More
+- Coerus API
+	- Coerus Allows you to use the WebAudio API and the WebSpeech API in a single package as well as Meyda in order to analyzer the WebAudio data.
 
-To learn more about Next.js, take a look at the following resources:
+- WebAudio 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+	- WebAudio is a context that allows you to create audio nodes and connect them together.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- WebSpeech
 
-## Deploy on Vercel
+	- Speech Recognition is a context that allows you to use the Speech Recognition context with the WebSpeech API.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Meyda Analyzer
+
+	- Meyda Analyzer is a context that allows you to use the Meyda Analyzer context with the WebAudio API.
+
+
+### Hooks
+
+- WebAudio 
+
+	- WebAudio is a hook that allows you to create audio nodes and connect them together.
+
+		```react
+		const DemoComponent = () => {
+			const webAudio = new useWAC();
+			
+			useEffect(() => {
+				console.log(webAudio)
+			}, [webAudio])
+
+			return(
+				...
+			);
+		}
+		```
+
+- WebSpeech
+
+	- Speech Recognition is a hook that allows you to use the Speech Recognition hook with the WebSpeech API.
+
+		```react
+		const DemoComponent = () => {
+			const speechRecognition = new useSRC();
+			
+			useEffect(() => {
+				console.log(speechRecognition)
+			}, [speechRecognition])
+
+			return(
+				...
+			);
+		}
+		```
+
+- Meyda Analyzer
+
+	- Meyda Analyzer is a hook that allows you to use the Meyda Analyzer hook with a Meyda Analyzer Node Object.
+
+		```react
+		const DemoComponent = () => {
+			const meydaAnalyzer = new useMeyda();
+			
+			useEffect(() => {
+				console.log(meydaAnalyzer)
+			}, [meydaAnalyzer])
+
+			return(
+				...
+			);
+		}
+		```
