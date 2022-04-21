@@ -2,7 +2,7 @@
   "name": "@jontdean/coerushooks",
   "version": "0.1.1",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/JonTDean"
+    "registry": "https://npm.pkg.github.com/jontdean"
   },
   "scripts": {
     "dev": "next dev",
