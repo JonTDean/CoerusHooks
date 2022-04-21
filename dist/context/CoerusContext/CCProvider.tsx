@@ -1,5 +1,5 @@
 //* React imports
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 //* Context API
 import SpeechRecognitionContextProvider from "../SpeechRecognitionContext/SRCProvider";
 import WebAudioContextProvider from "../WebAudioContext/WACProvider";
@@ -9,14 +9,21 @@ import useSRC from "../../hooks/useSRC";
 import useWAC from "../../hooks/useWAC";
 import useMC from "../../hooks/useMC";
 //* Globals
-import Meyda from "meyda";
 import CoerusContext from "./CC";
 
 // Create the Coerus Context provider 
 const CoerusContextProvider = ({ children }: any) =>  {
+	const src = useSRC();
+	const wac = useWAC();
+	const mc = useMC();
 
 	const value = {
-		// webAudio
+		// WebAudio API - Audio-[Context/SourceNode]
+		wac,
+		// WebSpeech API - Speech Recognition
+		src,
+		// Meyda
+		mc
 	};
 
 	return (
