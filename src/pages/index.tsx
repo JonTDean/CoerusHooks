@@ -4,9 +4,6 @@ import Example from '../components/example';
 
 
 const Home: NextPage = () => {
-
-
-
 	return <Example />
 }
 
