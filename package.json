@@ -1,6 +1,6 @@
 {
 	"name": "coerushooks",
-	"version": "0.2.6",
+	"version": "0.3.6",
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.js",
 	"files": [ "dist", "README.md" ],
