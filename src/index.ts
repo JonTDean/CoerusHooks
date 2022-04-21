@@ -1,5 +1,29 @@
+// Import all state contexts
+import CoerusContextProvider, {
+	SpeechRecognitionContextProvider,
+	WebAudioContextProvider,
+	MeydaAnalyzerContextProvider,
+} from './context'; 
+
+// Import all Hooks
+import useCoerus, {
+	useMC,
+	useSRC,
+	useWAC,
+} from './hooks';
+
 // Export all state contexts
-export * from './context/index';
+export {
+	CoerusContextProvider,
+	SpeechRecognitionContextProvider,
+	WebAudioContextProvider,
+	MeydaAnalyzerContextProvider,
+}
 
 // Export all Hooks
-export * from './hooks/index';
+export {
+	useCoerus,
+	useMC,
+	useSRC,
+	useWAC,
+}
