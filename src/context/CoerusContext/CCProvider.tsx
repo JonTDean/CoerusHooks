@@ -1,5 +1,5 @@
 //* React imports
-// import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 //* Context API
 import SpeechRecognitionContextProvider from "../SpeechRecognitionContext/SRCProvider";
 import WebAudioContextProvider from "../WebAudioContext/WACProvider";

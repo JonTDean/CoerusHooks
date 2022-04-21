@@ -1,5 +1,5 @@
 //* React imports
-import { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 //* Globals
 import Meyda from "meyda";
 //* Context API

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import WebAudioContext from "./WAC";
 
 // Create the speech recognition provider 
@@ -17,7 +17,7 @@ const WebAudioContextProvider = ({ children }: any) =>  {
 	// instead of having to create a reference
 	// to the current web audio context
 	const toggleWACState = useCallback(() => {
-		if(webAudioCtx != null && webAudioCtx != undefined)
+		if(webAudioCtx !== null && webAudioCtx !== undefined)
 			switch (wacState) {
 				case "running":
 					// If the WebAudioContext is running, stop it
@@ -59,7 +59,7 @@ const WebAudioContextProvider = ({ children }: any) =>  {
 			}).catch(err => err);
 
 		return(() => {
-			if(webAudioCtx != null || webAudioCtx != undefined){
+			if(webAudioCtx !== null && webAudioCtx !== undefined){
 				webAudioCtx.close();
 			}
 		});
