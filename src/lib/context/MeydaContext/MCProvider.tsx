@@ -3,7 +3,6 @@ import React, { useCallback, useEffect, useState } from "react";
 //* Globals
 import Meyda from "meyda";
 //* Context API
-import SpeechRecognitionContextProvider from "../SpeechRecognitionContext/SRCProvider";
 import MeydaAnalyzerContext from "./MC";
 // * Hooks
 import useWAC from "../../hooks/useWAC";
@@ -18,10 +17,53 @@ const MeydaAnalyzerContextProvider = ({ children }: any) =>  {
 	const [currMFCC, setCurrMFCC] = useState<number[]>(DEFAULT_MFCC);
 	const [currRMS, setCurrRMS] = useState<number>(0);
 	const [thresholdRMS, setThresholdRMS] = useState<number>(0.002);
+	const [mcState, setMCState] = useState<boolean>(false);
+
+	const toggleMCState = useCallback(() => {
+		if(meydaAnalyzer != undefined && meydaAnalyzer != null)
+			switch (meydaAnalyzer._m.EXTRACTION_STARTED) {
+				case false:
+					// Start Analyzer
+					console.log("STARTING ANALYZER");
+					setMCState(true);
+					meydaAnalyzer.start();
+					break;
+				case true:
+					// Stop Analyzer
+					console.log("STOPPING ANALYZER");
+					setMCState(false);
+					setMfccHistory([DEFAULT_MFCC]);
+					meydaAnalyzer.stop();
+					break;
+				default:
+					break;
+			}
+
+	}, [meydaAnalyzer]);
 
 	// Retrieve the web audio context
 	// and the web audio source node
 	const webAudio = useWAC();
+
+	// Log data in a development environment
+	const envLogic = useCallback((features: any) => {
+		if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+			// dev code
+			setMeydaData(
+				features,
+				thresholdRMS, mfccHistory,
+				setCurrMFCC, setCurrRMS, setMfccHistory,
+			);
+			debugMeyda(features);
+		} else {
+			// production code
+			setMeydaData(
+				features,
+				thresholdRMS, mfccHistory,
+				setCurrMFCC, setCurrRMS, setMfccHistory,
+			);
+		}
+	}, [thresholdRMS, mfccHistory]);
 
 	// Create Meyda Analyzer
 	useEffect(() => {
@@ -34,14 +76,7 @@ const MeydaAnalyzerContextProvider = ({ children }: any) =>  {
 				featureExtractors: ['rms', 'mfcc'],
 				// This Continuously calls 
 				// after the analyzer is started
-				callback: function(features: any) {
-					setMeydaData(
-						features,
-						thresholdRMS, mfccHistory,
-						setCurrMFCC, setCurrRMS, setMfccHistory,
-					);
-					debugMeyda(features);
-				}
+				callback: (features: any) => envLogic(features),
 			});
 
 			// Check Meyda Analyzer
@@ -51,13 +86,17 @@ const MeydaAnalyzerContextProvider = ({ children }: any) =>  {
 		return(()  => {
 			if(meydaAnalyzer != null) {
 				console.log("Stopping Meyda Analyzer...");
-				meydaAnalyzer.stop();
+				meydaAnalyzer?.stop();
+				setMCState(false);
 			}
 		})
 	}, [webAudio]);
 
 	const value = {
 		meydaAnalyzer,
+		mcState,
+		mfccHistory,
+		toggleMCState
 	};
 
 	return (

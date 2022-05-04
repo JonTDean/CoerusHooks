@@ -7,6 +7,9 @@ export {}; // Default Exports
 // need to get this to work which
 // is why we need to add the definitions
 // to the Node global interface.
+
+// Eventually this will be packaged with
+// a custom SpeechRecognition service.
 declare global {
     interface Window {
         SpeechRecognition:any;

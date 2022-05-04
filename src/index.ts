@@ -3,14 +3,14 @@ import CoerusContextProvider, {
 	SpeechRecognitionContextProvider,
 	WebAudioContextProvider,
 	MeydaAnalyzerContextProvider,
-} from './context'; 
+} from './lib/context'; 
 
 // Import all Hooks
 import useCoerus, {
 	useMC,
 	useSRC,
 	useWAC,
-} from './hooks';
+} from './lib/hooks';
 
 // Export all state contexts
 export {
